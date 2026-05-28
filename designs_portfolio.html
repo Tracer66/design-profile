@@ -1,0 +1,2107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Apoorwa | Dark Design Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050505;
+    color:white;
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+}
+
+/* =========================
+BACKGROUND
+========================= */
+
+.bg{
+    position:fixed;
+    width:100%;
+    height:100%;
+    z-index:-10;
+
+    background:
+    radial-gradient(circle at top left, rgba(140,82,255,0.18), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(255,0,98,0.15), transparent 30%),
+    linear-gradient(to bottom,#050505,#0a0a0f,#101015);
+}
+
+.blur{
+    position:absolute;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    filter:blur(120px);
+    opacity:0.2;
+}
+
+.blur1{
+    background:#8c52ff;
+    top:-120px;
+    left:-120px;
+}
+
+.blur2{
+    background:#ff0066;
+    bottom:-120px;
+    right:-120px;
+}
+
+
+/* =========================
+NAVBAR
+========================= */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:18px 8%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:rgba(0,0,0,0.35);
+
+    backdrop-filter:blur(14px);
+
+    border-bottom:1px solid rgba(255,255,255,0.05);
+
+    z-index:1000;
+}
+
+.logo{
+    font-family:'Orbitron';
+    font-size:28px;
+    letter-spacing:3px;
+}
+
+.nav-right{
+    display:flex;
+    gap:25px;
+}
+
+.nav-right a{
+    text-decoration:none;
+    color:#d0d0d0;
+    transition:0.3s;
+}
+
+.nav-right a:hover{
+    color:white;
+}
+
+/* =========================
+SETTINGS ICON
+========================= */
+
+.settings{
+    position:fixed;
+    right:18px;
+    top:50%;
+    transform:translateY(-50%);
+
+    width:42px;
+    height:42px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,0.05);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    cursor:pointer;
+
+    opacity:0.12;
+
+    transition:0.4s;
+
+    z-index:9999;
+}
+
+.settings:hover{
+    opacity:1;
+    background:linear-gradient(to right,#8c52ff,#ff0066);
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:120px 8%;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:85px;
+    line-height:1.1;
+    margin-bottom:25px;
+
+    font-family:'Orbitron';
+
+    background:linear-gradient(to right,#ffffff,#8c52ff,#ff0066);
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+    color:#bdbdbd;
+    line-height:1.9;
+    max-width:700px;
+    margin:auto;
+}
+
+.hero-btns{
+    margin-top:40px;
+
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 34px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    text-decoration:none;
+
+    transition:0.4s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+}
+
+.btn-primary{
+    background:linear-gradient(to right,#8c52ff,#ff0066);
+    color:white;
+}
+
+.btn-secondary{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    color:white;
+}
+
+/* =========================
+SECTIONS
+========================= */
+
+section{
+    padding:100px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:45px;
+    margin-bottom:60px;
+    font-family:'Orbitron';
+}
+
+/* =========================
+DASHBOARD
+========================= */
+
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.dashboard-card{
+    position:relative;
+
+    background:rgba(255,255,255,0.04);
+
+    border:1px solid rgba(255,255,255,0.06);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    overflow:hidden;
+
+    transition:0.4s;
+}
+
+.dashboard-card:hover{
+    transform:translateY(-10px);
+
+    border-color:#8c52ff;
+
+    box-shadow:0 0 30px rgba(140,82,255,0.15);
+}
+
+.dashboard-card::before{
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    background:linear-gradient(to right,#8c52ff,#ff0066);
+
+    top:-120px;
+    right:-120px;
+
+    opacity:0.12;
+}
+
+.dashboard-icon{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.dashboard-card h3{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.dashboard-card p{
+    color:#c5c5c5;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.dashboard-card button{
+    padding:12px 24px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:linear-gradient(to right,#8c52ff,#ff0066);
+
+    color:white;
+
+    cursor:pointer;
+}
+
+/* =========================
+CATEGORY BUTTONS
+========================= */
+
+.category-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:50px;
+}
+
+.category-buttons button{
+    padding:12px 24px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,0.05);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.category-buttons button:hover{
+    background:linear-gradient(to right,#8c52ff,#ff0066);
+}
+
+.active-btn{
+    background:linear-gradient(to right,#8c52ff,#ff0066) !important;
+}
+
+/* =========================
+COLLAGE GRID
+========================= */
+
+.poster-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+    gap:20px;
+    align-items:start;
+}
+
+.poster{
+    position:relative;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    background:#111;
+
+    border:1px solid rgba(255,255,255,0.06);
+
+    transition:0.4s;
+}
+
+.poster:hover{
+    transform:translateY(-6px);
+
+    box-shadow:0 0 30px rgba(140,82,255,0.15);
+}
+
+.poster img{
+    width:100%;
+    height:360px;
+    object-fit:cover;
+    display:block;
+    cursor:pointer;
+}
+
+/* =========================
+OVERLAY
+========================= */
+
+.poster-overlay{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    padding:20px;
+
+    background:
+    linear-gradient(to top,
+    rgba(0,0,0,0.96),
+    rgba(0,0,0,0.3),
+    transparent);
+}
+
+.poster-overlay h4{
+    margin-bottom:8px;
+    font-size:22px;
+}
+
+.poster-category{
+    font-size:12px;
+    letter-spacing:2px;
+    color:#b58cff;
+    margin-bottom:12px;
+}
+
+.poster-description{
+    margin-top:14px;
+
+    padding:14px;
+
+    border-radius:14px;
+
+    background:
+    rgba(255,255,255,0.05);
+
+    border:
+    1px solid rgba(255,255,255,0.06);
+
+    backdrop-filter:blur(10px);
+}
+
+.desc-title{
+    display:block;
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    color:#ff5fa2;
+
+    margin-bottom:8px;
+}
+
+.desc-text{
+    font-size:12px;
+
+    line-height:1.7;
+
+    color:#d6d6d6;
+}
+
+/* =========================
+POSTER ACTIONS
+========================= */
+
+.poster-actions{
+    position:absolute;
+    top:10px;
+    right:10px;
+
+    display:none;
+    gap:8px;
+}
+
+.poster-actions button{
+    border:none;
+    padding:8px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    color:white;
+}
+
+.edit-btn{
+    background:#8c52ff;
+}
+
+.delete-btn{
+    background:#ff0066;
+}
+
+.admin-mode .poster-actions{
+    display:flex;
+}
+
+/* =========================
+UPLOAD
+========================= */
+
+.upload-zone{
+    margin-top:60px;
+
+    border:2px dashed rgba(255,255,255,0.1);
+
+    border-radius:20px;
+
+    padding:50px;
+
+    text-align:center;
+
+    display:none;
+
+    transition:0.3s;
+}
+
+.admin-mode .upload-zone.upload-visible{
+    display:block;
+}
+
+.upload-zone.drag{
+    border-color:#8c52ff;
+    background:rgba(140,82,255,0.05);
+}
+
+.save-button{
+    margin-top:18px;
+    padding:12px 22px;
+    border:none;
+    border-radius:16px;
+    background:linear-gradient(to right,#8c52ff,#ff0066);
+    color:white;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.collage-section{
+    margin-bottom:30px;
+}
+
+.collage-category{
+    margin-bottom:26px;
+}
+
+.collage-category h3{
+    margin-bottom:14px;
+    color:#fff;
+    font-size:18px;
+}
+
+.collage-set{
+    margin-top:18px;
+}
+
+.collage-set h4{
+    margin-bottom:14px;
+    font-size:16px;
+    color:#ff5fa2;
+}
+
+.collage-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:16px;
+}
+
+.collage-card{
+    background:#111;
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:20px;
+    padding:14px;
+    min-height:160px;
+    display:grid;
+    gap:10px;
+}
+
+.collage-card h5{
+    margin:0;
+    font-size:14px;
+    color:#fff;
+}
+
+.collage-items{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.collage-item{
+    width:calc(50% - 4px);
+    aspect-ratio:1/0.9;
+    overflow:hidden;
+    border-radius:14px;
+    background:#1a1a1a;
+}
+
+.collage-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.collage-empty{
+    color:#888;
+    font-size:12px;
+}
+
+input[type=file]{
+    display:none;
+}
+
+/* =========================
+LIGHTBOX
+========================= */
+
+.lightbox{
+    position:fixed;
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(0,0,0,0.96);
+
+    z-index:9999;
+}
+
+.lightbox img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:20px;
+}
+
+.lightbox-close,
+.lightbox-nav{
+    position:absolute;
+    border:none;
+    color:white;
+    cursor:pointer;
+    z-index:10000;
+    transition:0.3s;
+}
+
+.lightbox-close{
+    top:24px;
+    right:28px;
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.08);
+    font-size:28px;
+}
+
+.lightbox-nav{
+    top:50%;
+    transform:translateY(-50%);
+    width:54px;
+    height:72px;
+    border-radius:14px;
+    background:rgba(255,255,255,0.06);
+    font-size:54px;
+    line-height:1;
+}
+
+.lightbox-nav:hover,
+.lightbox-close:hover{
+    background:linear-gradient(to right,#8c52ff,#ff0066);
+}
+
+.lightbox-prev{
+    left:24px;
+}
+
+.lightbox-next{
+    right:24px;
+}
+
+/* =========================
+ADMIN PANEL
+========================= */
+
+#adminPanel,
+#editPanel{
+    position:fixed;
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(0,0,0,0.85);
+
+    z-index:99999;
+}
+
+.admin-box{
+    width:340px;
+
+    background:#111;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:18px;
+
+    padding:25px;
+}
+
+.admin-box h3{
+    margin-bottom:15px;
+}
+
+.admin-box input,
+.admin-box select,
+.admin-box textarea{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+
+    background:#000;
+
+    border:1px solid #333;
+
+    color:white;
+
+    border-radius:10px;
+
+    font-family:'Poppins';
+}
+
+.admin-box textarea{
+    height:120px;
+    resize:none;
+}
+
+.admin-box button{
+    width:100%;
+    padding:12px;
+    margin-top:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:linear-gradient(to right,#8c52ff,#ff0066);
+
+    color:white;
+
+    cursor:pointer;
+}
+
+/* Admin exit button (visible in admin mode) */
+#adminCloseBtn{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    display:none;
+    z-index:999999;
+    padding:10px 14px;
+    border-radius:12px;
+    background:linear-gradient(to right,#8c52ff,#ff0066);
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+.admin-mode #adminCloseBtn{
+    display:block;
+}
+.edit-preview{
+    margin-top:10px;
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+.edit-preview img{
+    width:84px;
+    height:64px;
+    object-fit:cover;
+    border-radius:8px;
+    border:1px solid rgba(255,255,255,0.06);
+}
+
+/* =========================
+CONTACT
+========================= */
+
+.contact-section{
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,0.05);
+}
+
+.contact-links{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.contact-links a{
+    text-decoration:none;
+
+    color:white;
+
+    padding:14px 28px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,0.05);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    transition:0.4s;
+}
+
+.contact-links a:hover{
+    background:linear-gradient(to right,#8c52ff,#ff0066);
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:52px;
+}
+
+.section-title{
+    font-size:34px;
+}
+
+.poster-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px;
+}
+
+.poster img{
+    height:240px;
+}
+
+.nav-right{
+    display:none;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<!-- NAV -->
+
+<nav>
+
+<div class="logo">
+APOORWA
+</div>
+
+<div class="nav-right">
+
+<a href="#dashboard">
+Dashboard
+</a>
+
+<a href="#gallery">
+Gallery
+</a>
+
+<a href="#contact">
+Contacts
+</a>
+
+</div>
+
+</nav>
+
+<!-- SETTINGS -->
+
+<div class="settings" onclick="openAdmin()">
+⚙️
+</div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+DARK DESIGN PORTFOLIO
+</h1>
+
+<p>
+A cinematic collection of poster designs,
+branding concepts,
+event visuals,
+and immersive digital artwork.
+</p>
+
+<div class="hero-btns">
+
+<a href="#gallery" class="btn btn-primary">
+Explore Designs
+</a>
+
+<a href="#dashboard" class="btn btn-secondary">
+View Dashboard
+</a>
+
+<a href="#contact" class="btn btn-secondary">
+Contacts
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- DASHBOARD -->
+
+<section id="dashboard">
+
+<h2 class="section-title">
+Creative Dashboard
+</h2>
+
+<div class="dashboard-grid">
+
+<div class="dashboard-card">
+
+<div class="dashboard-icon">
+🎨
+</div>
+
+<h3>
+Poster Designs
+</h3>
+
+<p>
+Dark posters,
+anime visuals,
+creative artwork collections.
+</p>
+
+<button onclick="openCategory('poster')">
+Explore Posters
+</button>
+
+</div>
+
+<div class="dashboard-card">
+
+<div class="dashboard-icon">
+🎭
+</div>
+
+<h3>
+Event Designs
+</h3>
+
+<p>
+Festival posters,
+concert visuals,
+creative event banners.
+</p>
+
+<button onclick="openCategory('event')">
+Explore Events
+</button>
+
+</div>
+
+<div class="dashboard-card">
+
+<div class="dashboard-icon">
+⚡
+</div>
+
+<h3>
+Brand Designs
+</h3>
+
+<p>
+Luxury branding,
+logo systems,
+modern visual identities.
+</p>
+
+<button onclick="openCategory('brand')">
+Explore Branding
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section id="gallery">
+
+<h2 class="section-title">
+Design Showcase
+</h2>
+
+<div class="category-buttons">
+
+<button
+id="btn-all"
+class="active-btn"
+onclick="filterGallery('all', this)">
+All Works
+</button>
+
+<button
+id="btn-poster"
+onclick="filterGallery('poster', this)">
+Posters
+</button>
+<button
+id="btn-event"
+onclick="filterGallery('event', this)">
+Events
+</button>
+<button
+id="btn-brand"
+onclick="filterGallery('brand', this)">
+Brands
+</button>
+
+</div>
+
+<div class="poster-grid" id="posterGrid"></div>
+
+<!-- ADMIN UPLOAD -->
+
+<div class="upload-zone" id="uploadZone">
+
+<h3>
+Drop Designs Here
+</h3>
+
+<p>
+Only visible after admin login. Uploads follow the currently selected gallery category.
+</p>
+
+<p id="uploadTarget">
+Upload target: Poster
+</p>
+
+<input type="file" id="fileInput" multiple accept="image/*">
+
+<button id="saveUploadsButton" onclick="finalizeUploads()" class="save-button" type="button">
+Save
+</button>
+
+<button id="clearUploadsButton" onclick="clearUploadedCategory()" class="save-button" type="button">
+Clear
+</button>
+
+</div>
+
+</section>
+
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox">
+
+<button class="lightbox-close" onclick="closeLightbox(event)" type="button">
+&times;
+</button>
+
+<button class="lightbox-nav lightbox-prev" onclick="showPreviousImage(event)" type="button">
+&#8249;
+</button>
+
+<img id="lightboxImg" onclick="event.stopPropagation()">
+
+<button class="lightbox-nav lightbox-next" onclick="showNextImage(event)" type="button">
+&#8250;
+</button>
+
+</div>
+
+<!-- ADMIN PANEL -->
+
+<div id="adminPanel" onclick="outsideClose(event)">
+
+<div class="admin-box" onclick="event.stopPropagation()">
+
+<h3>
+Admin Login
+</h3>
+
+<input type="password" id="password" placeholder="Enter Password">
+
+<button onclick="loginAdmin()">
+Login
+</button>
+
+</div>
+
+</div>
+
+<button id="adminCloseBtn" onclick="logoutAdmin()">Exit Admin</button>
+
+<div id="editPanel" onclick="outsideEditClose(event)">
+
+<div class="admin-box" onclick="event.stopPropagation()">
+
+<h3>
+Edit Image
+</h3>
+
+<input type="text" id="editTitle" placeholder="Image Name">
+
+<textarea
+id="editDescription"
+placeholder="Design Description"></textarea>
+
+<select id="editCategory">
+
+<option value="poster">
+Poster
+</option>
+
+<option value="event">
+Event
+</option>
+
+<option value="brand">
+Brand
+</option>
+
+</select>
+
+<div class="edit-preview">
+    <div>
+        <div style="font-size:12px;color:#bbb;margin-bottom:6px;">Current Image</div>
+        <img id="editPreviewImg" src="" alt="preview">
+    </div>
+    <div>
+        <button onclick="document.getElementById('editFileInput').click()" type="button">Replace Image</button>
+        <input type="file" id="editFileInput" accept="image/*" style="display:none">
+    </div>
+</div>
+
+<button onclick="saveEdit()">
+Save Changes
+</button>
+
+<button onclick="closeEditPanel()" style="margin-top:10px;background:#333;">
+Cancel
+</button>
+
+</div>
+
+</div>
+
+<!-- CONTACT -->
+
+<section class="contact-section" id="contact">
+
+<h2 class="section-title">
+Contacts
+</h2>
+
+<div class="contact-links">
+
+<a href="mailto:apoorwarathnayake@gmail.com">
+📧 Gmail
+</a>
+
+<a href="https://instagram.com/apoo_2006_" target="_blank">
+📸 Instagram
+</a>
+
+<a href="https://github.com/tracer66" target="_blank">
+💻 GitHub
+</a>
+
+<a href="https://www.linkedin.com/in/apoo666/" target="_blank">
+💼 LinkedIn
+</a>
+
+</div>
+
+</section>
+
+<script>
+
+/* =========================
+DATABASE
+========================= */
+
+let db = [];
+
+const IDB_NAME = "ApoorwaPortfolioDesigns";
+const IDB_STORE = "designs";
+let idbReady = null;
+
+const PASSWORD = "tracer85";
+
+let currentEdit = null;
+
+let adminLogged = false;
+
+let currentFilter = "all";
+let currentLightboxItems = [];
+let currentLightboxIndex = 0;
+
+const CATEGORY_ORDER = {
+poster: 1,
+event: 2,
+brand: 3
+};
+
+const DEFAULT_DESIGNS = [
+{ id:"default-1", img:"creations/1.png", title:"Design 1", category:"poster", description:"Creative dark aesthetic portfolio artwork showcasing visual storytelling and cinematic composition." },
+{ id:"default-2", img:"creations/2.jpg", title:"Design 2", category:"poster", description:"Creative dark aesthetic portfolio artwork showcasing visual storytelling and cinematic composition." },
+{ id:"default-3", img:"creations/2.png", title:"Design 2 Variant", category:"poster", description:"Creative dark aesthetic portfolio artwork showcasing visual storytelling and cinematic composition." },
+{ id:"default-4", img:"creations/3.jpg", title:"Design 3", category:"poster", description:"Creative dark aesthetic portfolio artwork showcasing visual storytelling and cinematic composition." },
+{ id:"default-5", img:"creations/3.png", title:"Design 3 Variant", category:"poster", description:"Creative dark aesthetic portfolio artwork showcasing visual storytelling and cinematic composition." },
+{ id:"default-6", img:"creations/4.jpg", title:"Design 4", category:"poster", description:"Creative dark aesthetic portfolio artwork showcasing visual storytelling and cinematic composition." },
+{ id:"default-7", img:"creations/5.jpg", title:"Design 5", category:"poster", description:"Creative dark aesthetic portfolio artwork showcasing visual storytelling and cinematic composition." },
+{ id:"default-8", img:"creations/6.jpg", title:"Design 6", category:"poster", description:"Creative dark aesthetic portfolio artwork showcasing visual storytelling and cinematic composition." },
+{ id:"default-9", img:"creations/7.jpg", title:"Design 7", category:"poster", description:"Creative dark aesthetic portfolio artwork showcasing visual storytelling and cinematic composition." },
+{ id:"default-10", img:"creations/8.jpg", title:"Design 8", category:"poster", description:"Creative dark aesthetic portfolio artwork showcasing visual storytelling and cinematic composition." },
+{ id:"default-11", img:"creations/9.jpg", title:"Design 9", category:"poster", description:"Creative dark aesthetic portfolio artwork showcasing visual storytelling and cinematic composition." },
+{ id:"default-12", img:"creations/Anime birthday image.png", title:"Anime Birthday Image", category:"event", description:"Creative event artwork designed with anime-inspired visual storytelling." },
+{ id:"default-13", img:"creations/Anime New Year greet.png", title:"Anime New Year Greeting", category:"event", description:"Seasonal greeting design with a bright anime-inspired composition." },
+{ id:"default-14", img:"creations/Anime-style Sinhala .png", title:"Anime Style Sinhala", category:"poster", description:"Creative poster artwork with Sinhala-inspired styling and cinematic composition." },
+{ id:"default-15", img:"creations/beyond destiny.png", title:"Beyond Destiny", category:"poster", description:"Dark cinematic poster artwork with dramatic visual storytelling." },
+{ id:"default-16", img:"creations/dp 1.png", title:"DP Design 1", category:"brand", description:"Profile and identity design concept for digital branding." },
+{ id:"default-17", img:"creations/dp2.png", title:"DP Design 2", category:"brand", description:"Profile and identity design concept for digital branding." },
+{ id:"default-18", img:"creations/dp3.png", title:"DP Design 3", category:"brand", description:"Profile and identity design concept for digital branding." },
+{ id:"default-19", img:"creations/elenora 25-1.jpg", title:"Elenora 25-1", category:"event", description:"Event visual design with a bold cinematic presentation." },
+{ id:"default-20", img:"creations/elenora25-2.jpg", title:"Elenora 25-2", category:"event", description:"Event visual design with a bold cinematic presentation." },
+{ id:"default-21", img:"creations/elenora25.jpg", title:"Elenora 25", category:"event", description:"Event visual design with a bold cinematic presentation." },
+{ id:"default-22", img:"creations/flotrancia'24-1.png", title:"Flotrancia 24-1", category:"event", description:"Event poster design with vibrant visual storytelling." },
+{ id:"default-23", img:"creations/flotrancia'24-2.png", title:"Flotrancia 24-2", category:"event", description:"Event poster design with vibrant visual storytelling." },
+{ id:"default-24", img:"creations/flotrancia'24-3.png", title:"Flotrancia 24-3", category:"event", description:"Event poster design with vibrant visual storytelling." },
+{ id:"default-25", img:"creations/hidden love.png", title:"Hidden Love", category:"poster", description:"Cinematic poster artwork with emotional visual storytelling." },
+{ id:"default-26", img:"creations/Lonely Freedom.png", title:"Lonely Freedom", category:"poster", description:"Creative dark aesthetic poster artwork with expressive composition." },
+{ id:"default-27", img:"creations/Sinhala and Tamil Ne 2.png", title:"Sinhala And Tamil New Year 2", category:"event", description:"Seasonal event greeting design for Sinhala and Tamil New Year." },
+{ id:"default-28", img:"creations/Sinhala Tamil New Ye.png", title:"Sinhala Tamil New Year", category:"event", description:"Seasonal event greeting design for Sinhala and Tamil New Year." },
+{ id:"default-29", img:"creations/smile in pain 1.png", title:"Smile In Pain 1", category:"poster", description:"Expressive poster artwork with a dark emotional tone." },
+{ id:"default-30", img:"creations/smile in pain 2.png", title:"Smile In Pain 2", category:"poster", description:"Expressive poster artwork with a dark emotional tone." },
+{ id:"default-31", img:"creations/twinking eyes 1.png", title:"Twinkling Eyes 1", category:"poster", description:"Creative poster design with glowing cinematic detail." },
+{ id:"default-32", img:"creations/twinkling eyes 2.png", title:"Twinkling Eyes 2", category:"poster", description:"Creative poster design with glowing cinematic detail." },
+{ id:"default-33", img:"creations/world scout day 26-1.jpeg", title:"World Scout Day 26-1", category:"event", description:"Event design created for World Scout Day." },
+{ id:"default-34", img:"creations/world scout day 26-2.png", title:"World Scout Day 26-2", category:"event", description:"Event design created for World Scout Day." },
+{ id:"default-35", img:"creations/world scout day 26-3.png", title:"World Scout Day 26-3", category:"event", description:"Event design created for World Scout Day." }
+];
+
+function openDesignDB(){
+if(idbReady){
+return idbReady;
+}
+
+if(!("indexedDB" in window)){
+return Promise.reject(new Error("IndexedDB is not available"));
+}
+
+idbReady = new Promise((resolve, reject) => {
+const request = indexedDB.open(IDB_NAME, 1);
+
+request.onupgradeneeded = () => {
+const database = request.result;
+if(!database.objectStoreNames.contains(IDB_STORE)){
+database.createObjectStore(IDB_STORE, { keyPath:"id" });
+}
+};
+
+request.onsuccess = () => resolve(request.result);
+request.onerror = () => reject(request.error);
+});
+
+return idbReady;
+}
+
+function readIndexedDB(){
+return openDesignDB().then(database => new Promise((resolve, reject) => {
+const transaction = database.transaction(IDB_STORE, "readonly");
+const store = transaction.objectStore(IDB_STORE);
+const request = store.getAll();
+
+request.onsuccess = () => resolve(request.result || []);
+request.onerror = () => reject(request.error);
+}));
+}
+
+function writeIndexedDB(items){
+return openDesignDB().then(database => new Promise((resolve, reject) => {
+const transaction = database.transaction(IDB_STORE, "readwrite");
+const store = transaction.objectStore(IDB_STORE);
+
+store.clear();
+items.forEach(item => store.put(item));
+
+transaction.oncomplete = () => resolve();
+transaction.onerror = () => reject(transaction.error);
+}));
+}
+
+function createDesignId(){
+if(window.crypto && crypto.randomUUID){
+return crypto.randomUUID();
+}
+
+return `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+}
+
+function escapeHTML(value){
+return String(value || "")
+.replace(/&/g, "&amp;")
+.replace(/</g, "&lt;")
+.replace(/>/g, "&gt;")
+.replace(/"/g, "&quot;")
+.replace(/'/g, "&#039;");
+}
+
+function getVisibleItems(filter=currentFilter){
+const items = db.map((item, index) => ({
+...item,
+savedIndex:index
+}))
+.filter(item => {
+if(filter !== "all" && item.category !== filter){
+return false;
+}
+
+return true;
+});
+
+items.sort((a, b) => {
+if(filter === "all"){
+const categoryDifference =
+(CATEGORY_ORDER[a.category] || 99) - (CATEGORY_ORDER[b.category] || 99);
+
+if(categoryDifference !== 0){
+return categoryDifference;
+}
+}
+
+const orderA = Number.isFinite(a.order) ? a.order : a.savedIndex;
+const orderB = Number.isFinite(b.order) ? b.order : b.savedIndex;
+
+return orderA - orderB;
+});
+
+return items;
+}
+
+function normalizeDesignOrder(items){
+return items.map((item, index) => ({
+...item,
+order:Number.isFinite(item.order) ? item.order : index
+}));
+}
+
+function getNextOrder(){
+if(!db.length){
+return 0;
+}
+
+return Math.max(
+...db.map((item, index) => Number.isFinite(item.order) ? item.order : index)
+) + 1;
+}
+
+function isUploadedDesign(item){
+return !String(item.id || "").startsWith("default-");
+}
+
+function setActiveCategoryButton(category){
+document
+.querySelectorAll(".category-buttons button")
+.forEach(button => {
+button.classList.remove("active-btn");
+});
+
+const autoBtn =
+document.getElementById(
+`btn-${category}`
+);
+
+if(autoBtn){
+autoBtn.classList.add("active-btn");
+}
+}
+
+function updateUploadVisibility(){
+if(!uploadZone){
+return;
+}
+
+if(adminLogged && currentFilter !== "all"){
+uploadZone.classList.add("upload-visible");
+}else{
+uploadZone.classList.remove("upload-visible");
+}
+}
+
+async function loadDB(){
+try{
+const indexedItems = await readIndexedDB();
+db = normalizeDesignOrder(indexedItems.length ? indexedItems : DEFAULT_DESIGNS);
+}catch(error){
+db = normalizeDesignOrder(DEFAULT_DESIGNS);
+}
+
+renderGallery(currentFilter);
+updateUploadTarget();
+updateUploadVisibility();
+}
+
+/* =========================
+CATEGORY DETECTION
+========================= */
+
+function detectCategory(name){
+
+name = name.toLowerCase();
+
+if(
+name.includes("event") ||
+name.includes("concert") ||
+name.includes("festival")
+){
+return "event";
+}
+
+if(
+name.includes("brand") ||
+name.includes("logo") ||
+name.includes("identity")
+){
+return "brand";
+}
+
+return "poster";
+
+}
+
+/* =========================
+UPLOAD SYSTEM
+========================= */
+
+const uploadZone =
+document.getElementById("uploadZone");
+
+const fileInput =
+document.getElementById("fileInput");
+
+const uploadTarget =
+document.getElementById("uploadTarget");
+
+let currentUploadCategory = "poster";
+let editNewImageData = null;
+
+const editFileInput = document.getElementById('editFileInput');
+if(editFileInput){
+    editFileInput.addEventListener('change', e => {
+        const f = e.target.files[0];
+        if(!f) return;
+        const r = new FileReader();
+        r.onload = ev => {
+            editNewImageData = ev.target.result;
+            const img = document.getElementById('editPreviewImg');
+            if(img) img.src = editNewImageData;
+            showSaveFeedback('Image ready to save');
+        };
+        r.readAsDataURL(f);
+    });
+}
+
+uploadZone.addEventListener("click", e => {
+
+if(adminLogged && !e.target.closest("button")){
+fileInput.click();
+}
+
+});
+
+fileInput.addEventListener("change", e => {
+
+handleFiles(e.target.files);
+fileInput.value = "";
+
+});
+
+uploadZone.addEventListener("dragover", e => {
+
+e.preventDefault();
+
+uploadZone.classList.add("drag");
+
+});
+
+uploadZone.addEventListener("dragleave", () => {
+
+uploadZone.classList.remove("drag");
+
+});
+
+uploadZone.addEventListener("drop", e => {
+
+e.preventDefault();
+
+uploadZone.classList.remove("drag");
+
+if(adminLogged){
+handleFiles(e.dataTransfer.files);
+}
+
+});
+
+/* =========================
+HANDLE FILES
+========================= */
+
+function readImageFile(file){
+return new Promise((resolve, reject) => {
+const reader = new FileReader();
+
+reader.onload = e => resolve(e.target.result);
+reader.onerror = () => reject(reader.error);
+reader.readAsDataURL(file);
+});
+}
+
+async function handleFiles(files){
+
+const imageFiles = Array.from(files).filter(file => file.type.startsWith("image/"));
+
+for(const file of imageFiles){
+
+try{
+const imageData = await readImageFile(file);
+
+const category = currentUploadCategory === "all"
+  ? "poster"
+  : currentUploadCategory;
+
+db.push({
+
+id:createDesignId(),
+
+img:imageData,
+
+title:file.name.split(".")[0],
+
+category:category,
+
+createdAt:Date.now(),
+
+order:getNextOrder(),
+
+description:
+"Creative dark aesthetic portfolio artwork showcasing visual storytelling and cinematic composition."
+
+});
+
+saveDB();
+
+currentFilter = category;
+setActiveCategoryButton(category);
+updateUploadVisibility();
+renderGallery(category);
+showSaveFeedback("Design uploaded permanently");
+}catch(error){
+showSaveFeedback("One image could not be uploaded");
+}
+
+}
+
+}
+
+/* =========================
+SAVE DATABASE
+========================= */
+
+function saveDB(){
+
+// Browser uploads are saved locally in IndexedDB. For GitHub/OneDrive hosting,
+// permanent public images must be added to the project files before uploading.
+writeIndexedDB(db).catch(() => {});
+
+}
+
+/* =========================
+RENDER GALLERY
+========================= */
+
+function renderGallery(filter=currentFilter){
+
+currentFilter = filter;
+
+const grid =
+document.getElementById("posterGrid");
+
+grid.innerHTML = "";
+
+const visibleItems = getVisibleItems(filter);
+currentLightboxItems = visibleItems;
+
+visibleItems.forEach((item, index) => {
+
+const div =
+document.createElement("div");
+
+div.className = "poster";
+
+div.innerHTML = `
+
+<img src="${item.img}" alt="${escapeHTML(item.title)}">
+
+<div class="poster-overlay">
+
+<h4>${escapeHTML(item.title)}</h4>
+
+<p class="poster-category">
+${escapeHTML(item.category).toUpperCase()}
+</p>
+
+<div class="poster-description">
+
+<span class="desc-title">
+About Design
+</span>
+
+<p class="desc-text">
+${escapeHTML(item.description)}
+</p>
+
+</div>
+
+</div>
+
+<div class="poster-actions">
+
+<button
+class="edit-btn"
+onclick="editItem('${item.id}')">
+✏️
+</button>
+
+<button
+class="delete-btn"
+onclick="deleteItem('${item.id}')">
+🗑️
+</button>
+
+</div>
+
+`;
+
+div.querySelector("img").onclick = () => openLightbox(index);
+
+grid.appendChild(div);
+
+});
+
+/* ADMIN MODE */
+
+if(adminLogged){
+
+document.body.classList.add("admin-mode");
+updateUploadVisibility();
+
+}else{
+
+document.body.classList.remove("admin-mode");
+updateUploadVisibility();
+
+}
+
+}
+
+/* =========================
+FILTERS
+========================= */
+
+function updateUploadTarget(){
+  if(uploadTarget){
+    const text = currentUploadCategory === "all"
+      ? "Poster"
+      : currentUploadCategory.charAt(0).toUpperCase() + currentUploadCategory.slice(1);
+    uploadTarget.textContent = `Upload target: ${text}`;
+  }
+}
+
+function finalizeUploads(){
+  if(!adminLogged) return;
+  saveDB();
+  const saveButton = document.getElementById("saveUploadsButton");
+  if(saveButton){
+    saveButton.textContent = "Uploads saved";
+    setTimeout(() => {
+      if(saveButton.textContent !== "Uploads completed"){
+        saveButton.textContent = "Save";
+      }
+    }, 2200);
+  }
+  if(uploadTarget){
+    uploadTarget.textContent = `Upload target: ${currentUploadCategory === "all" ? "Poster" : currentUploadCategory.charAt(0).toUpperCase() + currentUploadCategory.slice(1)}`;
+  }
+  updateUploadVisibility();
+  renderGallery(currentFilter);
+}
+
+function clearUploadedCategory(){
+  if(!adminLogged || currentFilter === "all") return;
+
+  const categoryLabel =
+    currentFilter.charAt(0).toUpperCase() + currentFilter.slice(1);
+
+  const hasUploadedItems = db.some(item =>
+    item.category === currentFilter && isUploadedDesign(item)
+  );
+
+  if(!hasUploadedItems){
+    showSaveFeedback(`No uploaded ${categoryLabel} designs`);
+    return;
+  }
+
+  const confirmed = confirm(
+    `Clear uploaded ${categoryLabel} designs? Your built-in portfolio images will stay.`
+  );
+
+  if(!confirmed){
+    return;
+  }
+
+  db = db.filter(item =>
+    item.category !== currentFilter || !isUploadedDesign(item)
+  );
+
+  saveDB();
+  renderGallery(currentFilter);
+  showSaveFeedback(`${categoryLabel} uploads cleared`);
+}
+
+function showSaveFeedback(message){
+    const saveButton = document.getElementById("saveUploadsButton");
+    if(!saveButton) return;
+    saveButton.disabled = false;
+    saveButton.textContent = message;
+    if(saveButton.textContent !== "Uploads completed"){
+        setTimeout(() => {
+            if(saveButton.textContent !== "Uploads completed"){
+                saveButton.textContent = "Save";
+            }
+        }, 2200);
+    }
+}
+
+// Collage feature removed — designs display inside the main gallery
+
+function filterGallery(category, btn = null){
+
+currentFilter = category;
+
+if(category !== "all"){
+  currentUploadCategory = category;
+}
+
+updateUploadTarget();
+updateUploadVisibility();
+
+renderGallery(category);
+
+if(btn){
+setActiveCategoryButton(category);
+}else{
+setActiveCategoryButton(category);
+}
+
+}
+
+/* =========================
+DASHBOARD LINKING
+========================= */
+
+function openCategory(category){
+
+filterGallery(category);
+
+document
+.getElementById("gallery")
+.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+}
+
+/* =========================
+DELETE
+========================= */
+
+function deleteItem(id){
+
+if(!adminLogged) return;
+
+db =
+db.filter(item => String(item.id) !== String(id));
+
+saveDB();
+
+renderGallery(currentFilter);
+
+}
+
+/* =========================
+EDIT
+========================= */
+
+function editItem(id){
+
+if(!adminLogged) return;
+
+currentEdit = id;
+
+const item =
+db.find(i => String(i.id) === String(id));
+
+document.getElementById(
+"editTitle"
+).value = item.title;
+
+document.getElementById(
+"editDescription"
+).value = item.description;
+
+document.getElementById(
+"editCategory"
+).value = item.category;
+
+// reset any pending new image
+editNewImageData = null;
+const editPreviewImg = document.getElementById('editPreviewImg');
+if(editPreviewImg){ editPreviewImg.src = item.img; }
+
+openEditPanel();
+
+}
+
+function saveEdit(){
+
+if(!adminLogged) return;
+
+const item =
+db.find(i => String(i.id) === String(currentEdit));
+
+if(item){
+
+item.title =
+document.getElementById(
+"editTitle"
+).value;
+
+item.description =
+document.getElementById(
+"editDescription"
+).value;
+
+item.category =
+document.getElementById(
+"editCategory"
+).value;
+
+// apply new image if selected
+if(editNewImageData){
+    item.img = editNewImageData;
+    editNewImageData = null;
+}
+
+saveDB();
+
+currentUploadCategory = item.category;
+currentFilter = item.category;
+setActiveCategoryButton(item.category);
+updateUploadTarget();
+updateUploadVisibility();
+renderGallery(item.category);
+closeEditPanel();
+
+}
+
+}
+
+/* =========================
+ADMIN LOGIN
+========================= */
+
+function loginAdmin(){
+
+const pass =
+document.getElementById("password").value;
+
+if(pass === PASSWORD){
+
+adminLogged = true;
+
+renderGallery(currentFilter);
+
+closeAdmin();
+
+updateUploadTarget();
+updateUploadVisibility();
+
+}else{
+
+alert("Wrong Password");
+
+}
+
+} 
+
+/* =========================
+ADMIN PANEL
+========================= */
+
+function openAdmin(){
+
+document.getElementById(
+"adminPanel"
+).style.display = "flex";
+
+}
+
+function closeAdmin(){
+
+document.getElementById(
+"adminPanel"
+).style.display = "none";
+
+}
+
+function outsideClose(e){
+
+if(e.target.id === "adminPanel"){
+closeAdmin();
+}
+
+}
+
+function logoutAdmin(){
+    adminLogged = false;
+    closeAdmin();
+    closeEditPanel();
+    updateUploadVisibility();
+    const saveButton = document.getElementById("saveUploadsButton");
+    if(saveButton){
+        saveButton.disabled = false;
+        saveButton.textContent = "Save";
+    }
+    renderGallery(currentFilter);
+    updateUploadTarget();
+}
+
+function openEditPanel(){
+  document.getElementById("editPanel").style.display = "flex";
+}
+
+function closeEditPanel(){
+  document.getElementById("editPanel").style.display = "none";
+  currentEdit = null;
+  editNewImageData = null;
+}
+
+function outsideEditClose(e){
+  if(e.target.id === "editPanel"){
+    closeEditPanel();
+    updateUploadVisibility();
+  }
+}
+
+/* =========================
+LIGHTBOX
+========================= */
+
+document.getElementById(
+"lightbox"
+).onclick = closeLightbox;
+
+function openLightbox(index){
+if(!currentLightboxItems.length){
+currentLightboxItems = getVisibleItems(currentFilter);
+}
+
+document.getElementById(
+"lightbox"
+).style.display = "flex";
+
+currentLightboxIndex = index;
+updateLightboxImage();
+}
+
+function updateLightboxImage(){
+const item = currentLightboxItems[currentLightboxIndex];
+
+if(item){
+document.getElementById(
+"lightboxImg"
+).src = item.img;
+}
+}
+
+function showNextImage(event){
+if(event){
+event.stopPropagation();
+}
+
+if(!currentLightboxItems.length){
+return;
+}
+
+currentLightboxIndex =
+(currentLightboxIndex + 1) % currentLightboxItems.length;
+
+updateLightboxImage();
+}
+
+function showPreviousImage(event){
+if(event){
+event.stopPropagation();
+}
+
+if(!currentLightboxItems.length){
+return;
+}
+
+currentLightboxIndex =
+(currentLightboxIndex - 1 + currentLightboxItems.length) % currentLightboxItems.length;
+
+updateLightboxImage();
+}
+
+function closeLightbox(event){
+if(event){
+event.stopPropagation();
+}
+
+document.getElementById(
+"lightbox"
+).style.display = "none";
+
+document.getElementById(
+"lightboxImg"
+).src = "";
+}
+
+document.addEventListener("keydown", event => {
+if(document.getElementById("lightbox").style.display !== "flex"){
+return;
+}
+
+if(event.key === "ArrowRight"){
+showNextImage(event);
+}
+
+if(event.key === "ArrowLeft"){
+showPreviousImage(event);
+}
+
+if(event.key === "Escape"){
+closeLightbox(event);
+}
+});
+
+/* =========================
+INIT
+========================= */
+
+loadDB();
+
+</script>
+
+</body>
+</html>
